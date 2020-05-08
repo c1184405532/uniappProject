@@ -21,7 +21,7 @@
 <script>
 	
 	import mInput from '../../components/m-input.vue'
-
+	import Request from '@/static/request/Request.js'
 	export default {
 		components: {
 			mInput
@@ -35,7 +35,27 @@
 		
 		methods: {
 			login(){
-				
+				Request.post('api/login',{
+					data:{
+						userName:this.account,
+						passWord:this.password,
+					},
+					requestToastConfig:{
+						message:'正在登陆...'
+					},
+				}).then((res)=>{
+					
+					if(res.success){
+						this.global.setToken(res.data.token)
+						uni.switchTab({
+							url:'/pages/homePage/Home'
+						})
+					}
+					
+				},error=>{
+					console.log(error)
+				})
+				//console.log(Request)
 			},
 			
 		},

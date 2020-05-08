@@ -1,11 +1,13 @@
 <template>
 	<view class="">
-		<button type="primary" @click="gotoPage('list/SearchList')">进入列表</button>
+		<button type="default" class="btn_top" @click="requestMethods('put')">put请求</button>
+		<button type="warn" class="btn_top" @click="requestMethods('delete')">delete请求</button>
+		<button type="primary" class="btn_top" @click="gotoPage('list/SearchList')">进入列表</button>
 	</view>
 </template>
 
 <script>
-
+import Request from '@/static/request/Request.js'
 export default {
 	components: {
 		
@@ -58,7 +60,27 @@ export default {
 			uni.navigateTo({
 			    url: '../' + path
 			});
-		},			
+		},	
+		requestMethods(type){
+			if(type === 'put'){
+				let putData = [{name:'chenyuting',age:23},{name:'chenyuting',age:23}]
+				Request.put('api/add/list',
+					{
+						data:{list:putData}
+					}
+				).then((res)=>{
+					console.log('putres',res)
+				})
+			}
+			if(type === 'delete'){
+				let deleteData = ['1','2']
+				Request.delete('api/delete/list',{
+					data:{ids:deleteData}
+				}).then((res)=>{
+					console.log('deleteres',res)
+				})
+			}
+		},		
 		
 	}
 };
@@ -66,6 +88,9 @@ export default {
 <style>
 	
 </style>
-<style scoped lang="less">
-	
+<style scoped lang="scss">
+	.btn_top{
+		margin-top: 40rpx;
+		margin-left: 100rpx;
+	}
 </style>

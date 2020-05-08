@@ -55,8 +55,10 @@ export default {
 	methods: {
 		logout(path){
 			uni.reLaunch({
-				url: '../'+ path
+				url: '/pages/'+ path
 			});
+			this.global.removeToken()
+			//console.log(this.global.getToken())
 		},			
 		
 	}
