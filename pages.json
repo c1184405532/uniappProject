@@ -58,7 +58,8 @@
 		{
 			"path": "pages/list/HomeList",
 			"style": {
-				"navigationBarTitleText": "首页列表"
+				"navigationBarTitleText": "首页列表",
+				"enablePullDownRefresh":true
 			}
 		}, 
 		{

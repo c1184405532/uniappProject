@@ -21,7 +21,7 @@
 <script>
 	
 	import mInput from '../../components/m-input.vue'
-	import Request from '@/static/request/Request.js'
+	import Request from '@/js_sdk/request/Request.js'
 	export default {
 		components: {
 			mInput

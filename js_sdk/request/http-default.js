@@ -2,8 +2,8 @@
 import Request from '@/js_sdk/luch-request/index.js' 
 import global from "@/js_sdk/globalUtils.js"
 const baseClearToastTime = 1600;
-//const baseURL = 'http://192.168.0.103:9999';
-const baseURL = 'http://192.168.8.38:9999';
+const baseURL = 'http://192.168.0.101:9999';
+//const baseURL = 'http://192.168.8.38:9999';
 
 // const instance = Request.create({
 //     //baseURL:'https://api.github.com/users',//basePort + baseURL,
@@ -48,7 +48,7 @@ instance.interceptor.response(function (response) {
     uni.hideLoading()
     if(instance.toastConfig.successRequestToastType && response.data.status === 200){
 		uni.showToast({
-			title:response.data.message,
+			title:instance.toastConfig.successMessage || response.data.message,
 			mask:false,
 			icon:'none',
 			duration:baseClearToastTime
@@ -57,7 +57,7 @@ instance.interceptor.response(function (response) {
     }
     if(instance.toastConfig.errorRequestToastType && response.data.status !== 200){
 		uni.showToast({
-			title:response.data.message,
+			title:instance.toastConfig.successMessage || response.data.message,
 			mask:false,
 			icon:'none',
 			duration:baseClearToastTime

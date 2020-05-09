@@ -2,12 +2,12 @@
 	<view class="">
 		<button type="default" class="btn_top" @click="requestMethods('put')">put请求</button>
 		<button type="warn" class="btn_top" @click="requestMethods('delete')">delete请求</button>
-		<button type="primary" class="btn_top" @click="gotoPage('list/SearchList')">进入列表</button>
+		<button type="primary" class="btn_top" @click="gotoPage('list/HomeList')">进入列表</button>
 	</view>
 </template>
 
 <script>
-import Request from '@/static/request/Request.js'
+import Request from '@/js_sdk/request/Request.js'
 export default {
 	components: {
 		
