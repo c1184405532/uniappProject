@@ -2,8 +2,8 @@
 import Request from '@/js_sdk/luch-request/index.js' 
 import global from "@/js_sdk/globalUtils.js"
 const baseClearToastTime = 1600;
-const baseURL = 'http://192.168.0.101:9999';
-//const baseURL = 'http://192.168.8.38:9999';
+//const baseURL = 'http://192.168.0.101:9999';
+const baseURL = 'http://192.168.8.38:9999';
 
 // const instance = Request.create({
 //     //baseURL:'https://api.github.com/users',//basePort + baseURL,
@@ -12,14 +12,13 @@ const baseURL = 'http://192.168.0.101:9999';
 // })
 const instance = new Request()
 instance.setConfig((config)=>{/* config 为默认全局配置*/
-	config.baseUrl = baseURL; /* 根域名 */
+	config.baseUrl = getApp().globalData.baseUrl; /* 根域名 */
 	return config
 })
-
 instance.interceptor.request(function (config,cancel) { /* cancel 为函数，如果调用会取消本次请求。需要注意：调用cancel,本次请求的catch仍会执行。必须return config */
     // 在发送请求之前做些什么
     const token = global.getToken() 
-	console.log(token)
+	//console.log(token)
     //const token = 888
     if(token){
         config.header['X-Access-Token'] = token;
@@ -33,7 +32,7 @@ instance.interceptor.request(function (config,cancel) { /* cancel 为函数，�
         
     }
 	
-    console.log(config)
+    //console.log(config)
     return config;
 }, function (error) {
     //对请求错误做些什么
@@ -65,7 +64,7 @@ instance.interceptor.response(function (response) {
 		
         
     }
-    console.log('response',response)
+    //console.log('response',response)
     //console.log('instance',instance.toastConfig)
     
     return response.data;

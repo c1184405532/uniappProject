@@ -63,11 +63,19 @@
 			}
 		}, 
 		{
+			"path": "pages/list/detail/homeDetail",
+			"style": {
+				"navigationBarTitleText": "列表详情"
+				
+			}
+		},
+		{
 			"path": "pages/list/SearchList",
 			"style": {
 				"navigationBarTitleText": "搜索列表"
 			}
 		}, 
+		
 		{
 			"path": "pages/list/MyList",
 			"style": {

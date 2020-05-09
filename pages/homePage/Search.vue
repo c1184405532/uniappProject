@@ -1,6 +1,6 @@
 <template>
 	<view class="">
-		搜索搜索
+		<button type="primary" class="btn_top" @click="gotoPage('list/SearchList')">进入列表</button>
 	</view>
 </template>
 
@@ -52,15 +52,21 @@ export default {
 	destroyed(){
 		
 	},
-	methods: {
-					
-		
+	methods: {			
+		gotoPage(path){
+			uni.navigateTo({
+			    url: '/pages/' + path
+			});
+		},
 	}
 };
 </script>
 <style>
 	
 </style>
-<style scoped lang="less">
-	
+<style scoped lang="scss">
+	.btn_top{
+		margin-top: 40rpx;
+		margin-left: 100rpx;
+	}
 </style>

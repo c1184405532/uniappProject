@@ -19,7 +19,7 @@ export default {
 	},
 	//监听页面加载，其参数为上个页面传递的数据，参数类型为Object
 	onLoad(params) {
-		
+		console.log(params)
 	},
 	
 	//监听页面卸载
@@ -58,7 +58,7 @@ export default {
 	methods: {
 		gotoPage(path){
 			uni.navigateTo({
-			    url: '../' + path
+			    url: '/pages/' + path
 			});
 		},	
 		requestMethods(type){

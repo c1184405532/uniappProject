@@ -1,11 +1,6 @@
 <template>
 	<view class="">
-		搜索详情
-		<!-- <div class="list"  @click="gotoDetail('list/SearchListDetail')">
-			<p>姓名：</p>
-			<p>年龄：</p>
-		</div> -->
-		<!-- <button type="primary" class="btn_top" @click="gotoDetail('list/SearchListDetail')">进入详情</button> -->
+		详情详情
 	</view>
 </template>
 
@@ -22,14 +17,11 @@ export default {
 	},
 	//监听页面加载，其参数为上个页面传递的数据，参数类型为Object
 	onLoad(params) {
-		console.log('onLoad')
-	},
-	onReady(){
-		console.log('onReady')
+		console.log(params)
 	},
 	//监听页面卸载
 	onUnload(){
-		console.log('onUnload')
+		
 	},
 	//监听用户下拉动作，一般用于下拉刷新 
 	onPullDownRefresh(){
@@ -50,30 +42,25 @@ export default {
 	},
 	//vue 生命周期 组件创建前
 	created(){
-		console.log('created')
+		
 	},
 	//vue 生命周期 组件创建后
 	mounted() {
-		console.log("mounted")
+		
 	},
 	//vue 生命周期 组件卸载后触发
 	destroyed(){
-		console.log('destroyed')
+		
 	},
 	methods: {
 					
-		gotoDetail(path, data) {
-			uni.navigateTo({
-			    url: '/pages/' + path
-			});
-			
-		},
+		
 	}
 };
 </script>
 <style>
 	
 </style>
-<style scoped lang="less">
+<style scoped lang="scss">
 	
 </style>
